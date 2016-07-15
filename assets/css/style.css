@@ -1,7 +1,14 @@
 /*-------------------------
 	Simple reset
 --------------------------*/
-
+#github {
+    position: relative;
+}
+#github img {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
 
 *{
 	margin:0;
