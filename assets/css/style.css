@@ -1,0 +1,343 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	overflow:hidden;
+}
+
+a, a:visited {
+	outline:none;
+	color:#389dc1;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+section, footer, header, aside{
+	display: block;
+}
+
+
+/*-------------------------
+	The main page elements
+--------------------------*/
+
+
+body{
+	font:15px/1.3 'Raleway', sans-serif;
+	color: #fff;
+	width:100%;
+	height:100%;
+	position:absolute;
+	overflow:hidden;
+}
+
+#stage{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+
+	transition:top 0.4s;
+}
+
+#stage > div{  /* The step divs */
+	height:100%;
+	position:relative;
+}
+
+
+#stage h1{
+	font-weight:normal;
+	font-size:48px;
+	text-align:center;
+	color:#fff;
+	margin-bottom:60px;
+}
+
+#stage h2{
+	font-weight: normal;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: -40px 0 45px;
+	font-style: italic;
+}
+
+.content{
+	position:absolute;
+	text-align:center;
+	left:0;
+	top:50%;
+	width:100%;
+}
+
+.content input[type=file]{
+	display:none;
+}
+
+a.back{
+	width: 32px;
+	height: 32px;
+	background: url('../img/icons.svg') no-repeat -192px 0;
+	position: absolute;
+	cursor: pointer;
+	top: 50px;
+	left: 50%;
+	z-index: 10;
+	opacity: 0.8;
+	margin-left: -16px;
+	display:none;
+}
+
+a.back:hover{
+	opacity:1;
+}
+
+
+/*-------------------------
+	Conditional classes
+--------------------------*/
+
+
+[class*="if-"]{
+	display:none;
+}
+
+body.encrypt .if-encrypt{
+	display:block;
+}
+
+body.decrypt .if-decrypt{
+	display:block;
+}
+
+
+/*-------------------------
+	Button styles
+--------------------------*/
+
+
+.button{
+	width:240px;
+	height:70px;
+	text-align:center;
+	text-decoration: none !important;
+	color:#fff !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius:1px;
+	display:block;
+	line-height:70px;
+	box-shadow:3px 3px 0 rgba(0,0,0,0.08);
+	cursor: pointer;
+	font-size:18px;
+	margin:10px auto;
+	opacity:0.9;
+}
+
+.button:hover{
+	opacity:1;
+}
+
+.button::before{
+	content:'';
+	background: url(../img/icons.svg) no-repeat;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+	padding-right: 13px;
+}
+
+.button.green{
+	background-color:#92cd84;
+}
+
+.button.magenta{
+	background-color:#e661b7;
+}
+
+.button.blue{
+	background-color:#798dd7;
+}
+
+.button.red{
+	background-color: #c15645;
+}
+
+/* Styles for specific buttons */
+
+.button.browse{
+	width:180px;
+}
+
+.button.process{
+	width:190px;
+}
+
+.button.download{
+	width:216px;
+}
+
+.button.encrypt::before{
+	background-position: 0 0;
+}
+
+.button.decrypt::before{
+	background-position: -96px 0;
+}
+
+.button.browse::before{
+	background-position: -240px 0;
+}
+
+.button.process::before{
+	background-position: -142px 0;
+}
+
+.button.download:before{
+	background-position:-48px 0;
+}
+
+
+/*-------------------------
+	The steps
+--------------------------*/
+.classname {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+	background-color:#fe1a00;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:65px;
+	line-height:65px;
+	width:180px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #b23e35;
+}
+.classname:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
+	background-color:#ce0100;
+}.classname:active {
+	position:relative;
+	top:1px;
+}
+
+
+#step1{
+	background-color:#BE2625;
+}
+
+body.encrypt #step2{
+	background-color: #BE2625;
+}
+
+body.decrypt #step2{
+	background-color: #BE2625;
+}
+
+#step3{
+	background-color:#BE2625;
+}
+
+#step3 input[type=password]{
+	background-color: #fff;
+	border: none;
+	padding: 8px 18px;
+	line-height: 1;
+	font: inherit;
+	display: inline-block;
+	outline: none;
+	width: 400px;
+	margin-bottom: 18px;
+	border-radius: 2px;
+	box-shadow: 3px 3px 0 rgba(0,0,0,0.05);
+	font-size: 36px;
+	color: #555;
+}
+
+#step4{
+	background-color:#BE2625;
+}
+
+#step1 .content{	margin-top: -140px;}
+#step2 .content{	margin-top:-110px;}
+#step3 .content{	margin-top: -157px;}
+#step4 .content{	margin-top: -100px;}
+
+
+/*----------------------------
+	The Demo Footer
+-----------------------------*/
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v11/yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v11/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(https://fonts.gstatic.com/s/raleway/v11/WmVKXVcOuffP_qmCpFuyzSEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(https://fonts.gstatic.com/s/raleway/v11/JbtMzqLaYbbbCL9X6EvaI_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
